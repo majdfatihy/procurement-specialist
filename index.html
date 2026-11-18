@@ -162,6 +162,14 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 }
 </style>
 
+<style id="advantages-styling">
+.advantage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.advantage-grid .tile{display:flex;flex-direction:column;gap:8px}
+.advantage-grid .tile h3{line-height:1.55}
+.advantage-link{display:inline-flex;align-self:flex-start;margin-top:auto;font-size:12px;font-weight:800;padding-top:9px}
+@media(max-width:900px){.advantage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.advantage-grid .tile:last-child{grid-column:1/-1}}
+@media(max-width:600px){.advantage-grid{grid-template-columns:1fr}.advantage-grid .tile:last-child{grid-column:auto}}
+</style>
 <style id="cv-enhancements">
 .skip-nav{position:fixed;z-index:20;right:12px;top:-100px;background:#fff;color:#075779;padding:8px 14px;border-radius:8px}
 .skip-nav:focus{top:10px}
@@ -183,7 +191,7 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 <a class="skip-nav" href="#top">انتقل إلى محتوى السيرة</a>
 <header class="topbar">
 <a class="brand" href="#top"><span class="brand-mark">MF</span><span>ماجد فتحي <small style="display:block;font-size:10px;color:#6a8498;font-weight:600">PROFESSIONAL PROFILE</small></span></a>
-<nav class="nav" aria-label="أقسام الملف"><a href="#experience">الخبرة</a><a href="#specializations">التخصصات</a><a href="#education">المؤهل</a><a href="#skills">المهارات</a><a href="#contact">التواصل</a><button id="motionToggle" class="motion-toggle" type="button" aria-pressed="false" aria-label="إيقاف حركة الخلفية" title="إيقاف حركة الخلفية">إيقاف الحركة</button></nav>
+<nav class="nav" aria-label="أقسام الملف"><a href="#advantages">ما يميزني</a><a href="#experience">الخبرة</a><a href="#specializations">التخصصات</a><a href="#education">المؤهل</a><a href="#skills">المهارات</a><a href="#contact">التواصل</a><button id="motionToggle" class="motion-toggle" type="button" aria-pressed="false" aria-label="إيقاف حركة الخلفية" title="إيقاف حركة الخلفية">إيقاف الحركة</button></nav>
 </header>
 <main id="top">
 <div class="hero">
@@ -210,6 +218,14 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 <section class="section" id="overview">
 <div class="section-head"><span class="icon-square" aria-hidden="true">◎</span><div><h2>الملخص التنفيذي</h2><p>ما الذي أقدمه للإدارة؟</p></div></div>
 <p class="summary">أعمل على توفير احتياجات التشغيل والإنتاج بالمواصفات الفنية المعتمدة، من خلال البحث عن موردين مناسبين ومقارنة عروض الأسعار والتفاوض على التكلفة والجودة ومواعيد التسليم. أتابع التوريد وحركة المخزون والمرتجعات وأرفع تقارير تساعد الإدارة على اتخاذ قرارات مبنية على البيانات. أتعامل بمرونة مع الطلبات العاجلة والبدائل الفنية بالتنسيق مع الجودة والتشغيل والمخازن والمالية والصيانة، في حدود الصلاحيات الممنوحة.</p>
+</section>
+<section class="section" id="advantages" aria-labelledby="advantages-title">
+<div class="section-head"><span class="icon-square" aria-hidden="true">✦</span><div><h2 id="advantages-title">ما الذي يميزني عن غيري من أخصائيي المشتريات؟</h2><p>الجمع بين الخبرة الصناعية وتنظيم المعلومات وصناعة المحتوى التقني</p></div></div>
+<div class="advantage-grid">
+<article class="tile"><h3>خبرة عملية في مشتريات المصانع الطبية</h3><p>متابعة توريد خامات التشغيل ومواد التعبئة والتغليف والمستلزمات الطبية وقطع الغيار، مع مراجعة المواصفات والتنسيق مع الإدارات الفنية والموردين ضمن دورة الشراء.</p></article>
+<article class="tile"><h3>تنظيم المعلومات وتحليلها</h3><p>خلفية أكاديمية في المكتبات والمعلومات، إلى جانب التعامل مع ERP BAR وExcel لتوثيق الطلبات والبحث عن الموردين وتحليل البيانات وإعداد التقارير.</p></article>
+<article class="tile"><h3>صانع محتوى تقني على YouTube منذ 2016 حتى الآن</h3><p>أقدّم شروحات تقنية عملية تعتمد على البحث وفهم الأدوات والأنظمة وتبسيط المعلومات وحل المشكلات؛ وهي مهارات تدعم التواصل الواضح والتعلم المستمر في بيئة العمل.</p><a class="advantage-link" href="https://www.youtube.com/@MajdFatihy" target="_blank" rel="noopener noreferrer">مشاهدة قناتي على YouTube</a></article>
+</div>
 </section>
 <section class="section" id="experience">
 <div class="section-head"><span class="icon-square" aria-hidden="true">▤</span><div><h2>الخبرة العملية</h2><p>مسؤوليات تشغيلية قابلة للفحص والتقييم</p></div></div>
@@ -309,6 +325,8 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
     <div class="p-card"><b>المؤهل العلمي</b><p>ليسانس الآداب — جامعة المنيا، تخصص المكتبات والمعلومات، مع معارف في التوثيق وتنظيم البيانات والبحث واسترجاع المعلومات.</p></div>
     <div class="p-card"><b>اللغات وبيئة العمل</b><p>العربية: اللغة الأم. الإنجليزية: مستوى جيد وفق السيرة المقدمة. خبرة عملية في ERP BAR والقدرة على التكيف مع أنظمة العمل.</p></div>
   </div>
+  <div class="p-heading">مزايا مهنية إضافية</div>
+  <p>خبرة في صناعة المحتوى التقني على YouTube منذ 2016 حتى الآن، تشمل البحث وتبسيط الشروحات والتواصل الرقمي، إلى جانب الخبرة الصناعية وتنظيم المعلومات.</p>
   <div class="p-contact"><b>للتواصل بشأن فرص العمل</b><div>البريد: <span>info@majdfatihy.com</span> | واتساب: <span>01066732514</span> | تيليجرام: <span>@majdfatihy</span></div><div class="p-source">الملف المهني: https://dev.majdfatihy.com/procurement-specialist/</div></div>
   <div class="p-foot"><span>ماجد فتحي | أخصائي مشتريات طبية وصناعية</span><span>2 / 2</span></div>
 </section>
