@@ -37,14 +37,7 @@ jobs:
           test -s qa-output/mobile.png
           test -s qa-output/professional-cv.pdf
           test -s qa-output/ats-cv.pdf
-          if command -v pdfinfo >/dev/null; then
-            printf 'Professional PDF pages: '
-            pdfinfo qa-output/professional-cv.pdf | awk '/^Pages:/{print $2}'
-            printf 'ATS PDF pages: '
-            pdfinfo qa-output/ats-cv.pdf | awk '/^Pages:/{print $2}'
-            test "$(pdfinfo qa-output/professional-cv.pdf | awk '/^Pages:/{print $2}')" -eq 2
-            test "$(pdfinfo qa-output/ats-cv.pdf | awk '/^Pages:/{print $2}')" -le 2
-          fi
+          python3 -c 'import re, pathlib; p=pathlib.Path("qa-output"); counts={f:len(re.findall(rb"/Type\\s*/Page\\b",(p/f).read_bytes())) for f in ["professional-cv.pdf","ats-cv.pdf"]}; print("Verified PDF page counts:",counts); assert counts["professional-cv.pdf"]==2, "Professional PDF must be exactly 2 pages"; assert 1<=counts["ats-cv.pdf"]<=2, "ATS PDF must be 1–2 pages"'
       - name: Attach QA screenshots and PDF samples
         if: always()
         uses: actions/upload-artifact@v4
