@@ -1,0 +1,54 @@
+name: Verify CV on desktop, mobile and A4 PDF
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "cv-ats.html"
+      - "scripts/check-cv.mjs"
+      - ".github/workflows/cv-qa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout CV repository
+        uses: actions/checkout@v4
+      - name: Validate SEO, links, privacy and ATS
+        run: node scripts/check-cv.mjs
+      - name: Render desktop, mobile and print layouts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p qa-output
+          BROWSER="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          test -n "$BROWSER" || { echo "Chrome browser is missing"; exit 1; }
+          URL="file://$PWD/index.html"
+          ATS="file://$PWD/cv-ats.html"
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --window-size=1440,900 --screenshot="$PWD/qa-output/desktop.png" "$URL" >/dev/null 2>&1
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --hide-scrollbars --window-size=412,915 --screenshot="$PWD/qa-output/mobile.png" "$URL" >/dev/null 2>&1
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --no-pdf-header-footer --print-to-pdf="$PWD/qa-output/professional-cv.pdf" "$URL" >/dev/null 2>&1
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage --no-pdf-header-footer --print-to-pdf="$PWD/qa-output/ats-cv.pdf" "$ATS" >/dev/null 2>&1
+          test -s qa-output/desktop.png
+          test -s qa-output/mobile.png
+          test -s qa-output/professional-cv.pdf
+          test -s qa-output/ats-cv.pdf
+          if command -v pdfinfo >/dev/null; then
+            printf 'Professional PDF pages: '
+            pdfinfo qa-output/professional-cv.pdf | awk '/^Pages:/{print $2}'
+            printf 'ATS PDF pages: '
+            pdfinfo qa-output/ats-cv.pdf | awk '/^Pages:/{print $2}'
+            test "$(pdfinfo qa-output/professional-cv.pdf | awk '/^Pages:/{print $2}')" -eq 2
+            test "$(pdfinfo qa-output/ats-cv.pdf | awk '/^Pages:/{print $2}')" -le 2
+          fi
+      - name: Attach QA screenshots and PDF samples
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-desktop-mobile-and-pdf-tests
+          path: qa-output/
+          if-no-files-found: warn
