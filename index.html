@@ -86,10 +86,14 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 .tile p{margin:0;color:#48637a;font-size:13px}
 .tile ul{margin:0;padding-right:19px;color:#415e73;font-size:13px}
 .tile li{padding:2px 0}
-.timeline{border-right:2px solid #a0dff3;padding-right:25px;margin:0 9px 0 0;position:relative}
-.timeline:before{content:"";width:14px;height:14px;position:absolute;top:10px;right:-8px;background:#00a1d1;border:4px solid #daf5ff;border-radius:50%}
-.timeline h3{font-size:20px;margin:0}.period{font-size:13px;font-weight:700;color:#027fae;margin:5px 0}
-.timeline p{margin:7px 0 14px;color:var(--muted);font-size:14px}
+#experience .timeline{position:relative;border:0;margin:0 9px 0 0;padding:0 28px 0 0;min-width:0}
+#experience .timeline::before{content:"";position:absolute;right:0;top:0;bottom:0;width:3px;border-radius:3px;background:#91d8ed;transform:translateX(50%)}
+#experience .timeline::after{content:"";box-sizing:border-box;position:absolute;right:0;top:16px;width:18px;height:18px;transform:translateX(50%);background:#07a4cf;border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 2px #07a4cf}
+#experience .timeline-job-card{background:#f1faff;border:1px solid #cdeaf6;border-radius:14px;padding:17px 19px;margin-bottom:16px}
+#experience .timeline-job-card .period{font-size:13px;font-weight:700;color:#027fae;margin:0 0 8px;line-height:1.7}
+#experience .timeline-job-card h3{font-size:18px;line-height:1.7;margin:0 0 5px;color:#163f58}
+#experience .timeline-job-card p{margin:6px 0 0;color:var(--muted);font-size:14px;line-height:1.8}
+@media(max-width:600px){#experience .timeline{padding-right:23px;margin-right:3px}#experience .timeline-job-card{padding:13px 12px;margin-bottom:13px}#experience .timeline-job-card h3{font-size:16px}#experience .timeline::after{top:15px}}
 .pill{background:#e1f6fe;border-radius:8px;padding:3px 7px;font-size:12px;color:#05729b;font-weight:700}
 .proc-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}
 .step{border:1px solid #d2eaf7;border-radius:12px;padding:13px;text-align:center;background:#f5fbfe;font-size:12px;font-weight:700;color:#195878}
@@ -285,8 +289,11 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 <section class="section" id="experience">
 <div class="section-head"><span class="icon-square" aria-hidden="true">▤</span><div><h2>الخبرة العملية</h2><p>مسؤوليات تشغيلية قابلة للفحص والتقييم</p></div></div>
 <div class="timeline">
-<h3>أخصائي مشتريات — مصنع سيرن للكواشف التشخيصية</h3><div class="period">مايو 2024 — مستمر <span class="pill">القطاع الطبي والتصنيعي</span></div>
+<div class="timeline-job-card">
+<div class="period">مايو 2024 — مستمر <span class="pill">القطاع الطبي والتصنيعي</span></div>
+<h3>أخصائي مشتريات — مصنع سيرن للكواشف التشخيصية</h3>
 <p>مشتريات المواد الخام والمستلزمات ومعدات التشغيل والتعبئة والتغليف، والتنسيق بين الجهات الطالبة والموردين والمخازن والأقسام الفنية.</p>
+</div>
 <div class="grid-two">
 <article class="tile"><h3>إدارة دورة الشراء</h3><ul><li>استلام وتحليل طلبات الشراء ومراجعة المواصفات مع الأقسام الفنية.</li><li>طلب ومقارنة عروض الأسعار وتقييم الموردين والتفاوض.</li><li>إصدار أوامر الشراء وتسجيلها ومتابعة اكتمالها وإغلاقها.</li><li>توثيق حالات التوريد والإخطارات ومتابعة التأخير والبدائل.</li></ul></article>
 <article class="tile"><h3>الرقابة والتكاليف</h3><ul><li>متابعة الأسعار وشروط التوريد والتكاليف ضمن حدود الصلاحيات.</li><li>تحليل المشتريات حسب الفترات الزمنية والموردين.</li><li>مراجعة مرتجعات الموردين واتخاذ الإجراءات بالتنسيق مع الأقسام المعنية.</li><li>إعداد تقارير متابعة وتقييم الموردين وجودة التوريد.</li></ul></article>
