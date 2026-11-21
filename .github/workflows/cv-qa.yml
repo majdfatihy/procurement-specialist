@@ -5,6 +5,10 @@ on:
     paths:
       - "index.html"
       - "cv-ats.html"
+      - "en/index.html"
+      - "scripts/build-site.sh"
+      - "scripts/audit-bilingual.py"
+      - ".github/workflows/pages.yml"
       - "scripts/check-cv.mjs"
       - "scripts/audit-layout.py"
       - ".github/workflows/cv-qa.yml"
@@ -39,10 +43,16 @@ jobs:
           test -s qa-output/professional-cv.pdf
           test -s qa-output/ats-cv.pdf
           python3 -c 'import re, pathlib; p=pathlib.Path("qa-output"); counts={f:len(re.findall(rb"/Type\s*/Page\b",(p/f).read_bytes())) for f in ["professional-cv.pdf","ats-cv.pdf"]}; print("Verified PDF page counts:",counts); assert counts["professional-cv.pdf"]==2, "Professional PDF must be exactly 2 pages"; assert counts["ats-cv.pdf"]==1, "ATS PDF must fit a single A4 page"'
+      - name: Generate and validate all three downloadable PDFs
+        run: |
+          bash scripts/build-site.sh
+          cp _site/*.pdf qa-output/
       - name: Install browser layout test
         run: python3 -m pip install --quiet playwright
       - name: Audit menu overlay and every section at 6 widths
         run: python3 scripts/audit-layout.py
+      - name: Check bilingual layout, English contacts and downloads
+        run: python3 scripts/audit-bilingual.py
       - name: Attach QA screenshots and PDF samples
         if: always()
         uses: actions/upload-artifact@v4
