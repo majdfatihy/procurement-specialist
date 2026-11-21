@@ -4,10 +4,11 @@ cd "$(dirname "$0")/.."
 ROOT="$PWD"
 BROWSER="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
 if [ -z "$BROWSER" ]; then echo "Chrome/Chromium is required to generate the direct-download CV PDFs" >&2; exit 1; fi
-mkdir -p _site/en _site/assets
+mkdir -p _site/en _site/assets/js
 cp index.html cv-ats.html _site/
 cp en/index.html _site/en/index.html
 cp assets/majd-fatihy-procurement-specialist.jpg _site/assets/
+cp assets/js/cv-language.js _site/assets/js/
 touch _site/.nojekyll
 make_pdf() {
   local html="$1" output="$2"
@@ -32,7 +33,7 @@ for name,(low,high) in expected.items():
     count=len(re.findall(rb"/Type\s*/Page\b",data))
     print(f"{name}: {count} pages; {len(data)} bytes")
     assert low <= count <= high,f"{name} has unexpected {count} pages"
-for name in ("index.html","cv-ats.html","en/index.html","assets/majd-fatihy-procurement-specialist.jpg"):
+for name in ("index.html","cv-ats.html","en/index.html","assets/majd-fatihy-procurement-specialist.jpg","assets/js/cv-language.js"):
     assert (Path("_site")/name).exists(),name
 print("PASS: ready-to-download Arabic, ATS and English CV PDFs + both language pages")
 PY
