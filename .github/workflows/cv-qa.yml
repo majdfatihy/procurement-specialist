@@ -9,6 +9,7 @@ on:
       - "scripts/build-site.sh"
       - "scripts/audit-bilingual.py"
       - "scripts/audit-language.py"
+      - "scripts/audit-pdf-links.py"
       - "assets/js/cv-language.js"
       - ".github/workflows/pages.yml"
       - "scripts/check-cv.mjs"
@@ -49,6 +50,10 @@ jobs:
         run: |
           bash scripts/build-site.sh
           cp _site/*.pdf qa-output/
+      - name: Verify clickable links on each generated PDF page
+        run: |
+          python3 -m pip install --quiet pypdf
+          python3 scripts/audit-pdf-links.py
       - name: Install browser layout test
         run: python3 -m pip install --quiet playwright
       - name: Audit menu overlay and every section at 6 widths
