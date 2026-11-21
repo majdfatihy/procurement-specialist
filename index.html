@@ -131,7 +131,18 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
   .shell,#network,.backdrop,#copyStatus{display:none!important}
   #print-cv{display:block!important;color:#182d3b!important;font-family:"Cairo",Tahoma,Arial,sans-serif!important;font-size:9.4pt;line-height:1.55}
   #print-cv *{box-sizing:border-box}
-  #print-cv .p-page{height:297mm;width:210mm;position:relative;overflow:hidden;padding:14mm 16mm 14mm 16mm;background:#fff;break-after:page;page-break-after:always}
+  #print-cv .p-page{height:297mm;width:210mm;position:relative;overflow:hidden;padding:23mm 16mm 22mm 16mm;background:#fff;break-after:page;page-break-after:always}
+  #print-cv .p-page::before{content:"";position:absolute;inset:6mm;border:1px solid #83b8cc;border-radius:3mm;pointer-events:none}
+  #print-cv .p-print-top{position:absolute;top:8.2mm;right:16mm;left:16mm;display:flex;align-items:center;justify-content:space-between;gap:5mm;padding-bottom:2mm;border-bottom:1px solid #d1e3eb;font:7.9pt Tahoma,Arial,sans-serif;line-height:1.4}
+  #print-cv .p-print-top a{color:#0b688d;text-decoration:none}
+  #print-cv .p-print-url{direction:ltr;text-align:left;font:7.3pt Arial,sans-serif;white-space:nowrap}
+  #print-cv .p-print-actions{display:flex;flex-wrap:nowrap;align-items:center;gap:3mm}
+  #print-cv .p-print-actions a{display:inline-flex;align-items:center;gap:1mm;white-space:nowrap;direction:ltr;font:7.4pt Arial,sans-serif}
+  #print-cv .p-print-actions svg{width:10px;height:10px;stroke:#0682ac;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  #print-cv .p-foot{bottom:9mm}
+  #print-cv .p-foot .cv-printed-at{font-weight:600}
+  #print-cv .p-head-side a,#print-cv .p-contact a{color:#136383;text-decoration:none}
+
   #print-cv .p-page:last-child{break-after:auto;page-break-after:auto}
   #print-cv .p-header{display:flex;justify-content:space-between;align-items:center;gap:12mm;border-bottom:2.2pt solid #087ba4;padding-bottom:8mm;margin-bottom:5mm}
   #print-cv .p-header .p-name{font-size:30pt;font-weight:800;color:#102a40;margin:0;line-height:1.35;letter-spacing:0}
@@ -156,7 +167,7 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
   #print-cv .p-card ul{padding-right:4mm}
   #print-cv .p-flow{display:flex;justify-content:space-between;gap:2mm;margin-top:6mm}
   #print-cv .p-flow span{background:#eaf7fc;border:1px solid #c8e4ed;border-radius:2mm;padding:2mm 2.8mm;flex:1;text-align:center;font-size:8.3pt;font-weight:700;color:#12506b}
-  #print-cv .p-foot{position:absolute;bottom:9mm;right:16mm;left:16mm;display:flex;justify-content:space-between;color:#617483;font-size:8pt;border-top:1px solid #c9dce5;padding-top:2mm}
+  #print-cv .p-foot{position:absolute;bottom:9mm;right:16mm;left:16mm;display:flex;justify-content:space-between;align-items:center;gap:3mm;color:#617483;font-size:7.4pt;border-top:1px solid #c9dce5;padding-top:2mm}
   #print-cv .p-small-head{display:flex;justify-content:space-between;align-items:center;padding:0 0 4mm;border-bottom:2px solid #0787af;color:#0b597c}
   #print-cv .p-small-head strong{font-size:15pt}
   #print-cv .p-small-head span{font:700 8.5pt Arial,sans-serif;color:#4b7288;direction:ltr}
@@ -352,7 +363,7 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 <p class="summary">أعمل على توفير احتياجات التشغيل والإنتاج بالمواصفات الفنية المعتمدة، من خلال البحث عن موردين مناسبين ومقارنة عروض الأسعار والتفاوض على التكلفة والجودة ومواعيد التسليم. أتابع التوريد وحركة المخزون والمرتجعات وأرفع تقارير تساعد الإدارة على اتخاذ قرارات مبنية على البيانات. أتعامل بمرونة مع الطلبات العاجلة والبدائل الفنية بالتنسيق مع الجودة والتشغيل والمخازن والمالية والصيانة، في حدود الصلاحيات الممنوحة.</p>
 </section>
 <section class="section" id="roles" aria-labelledby="cv-roles-title">
-<div class="section-head"><span class="icon-square" aria-hidden="true"><svg class="cv-section-icon" viewBox="0 0 24 24"><use href="#cv-i-users"></use></svg></span><div><h2 id="cv-roles-title">المسميات الوظيفية والتخصصات المرتبطة بخبرتي</h2><p>مسميات بحث وظيفية متقاربة في إعلانات المشتريات، وليست ادعاءً بشغل كل مسمى وظيفي</p></div></div>
+<div class="section-head"><span class="icon-square" aria-hidden="true"><svg class="cv-section-icon" viewBox="0 0 24 24"><use href="#cv-i-users"></use></svg></span><div><h2 id="cv-roles-title">المسميات الوظيفية والتخصصات المرتبطة بخبرتي</h2><p>مسميات وظيفية وتخصصات مرتبطة بالمشتريات والتوريد في القطاعين الطبي والصناعي</p></div></div>
 <p class="summary">تتركز خبرتي في مشتريات المصانع الطبية والصناعية، وتأمين المواد الخام ومستلزمات التشغيل والتعبئة والتغليف والمعدات وقطع الغيار، مع إدارة الموردين ومتابعة أوامر الشراء.</p>
 <div class="cv-role-tags" aria-label="مسميات وظائف المشتريات">
 <span>أخصائي مشتريات</span><span>مسؤول مشتريات</span><span>موظف مشتريات</span><span>منسق مشتريات</span><span>أخصائي توريد</span><span>مسؤول توريد مصانع</span><span>أخصائي مشتريات طبية</span><span>مشتريات صناعية</span><span>مشتريات مواد خام</span><span>مشتريات مواد تعبئة وتغليف</span><span>مشتريات مستلزمات معامل</span><span>مشتريات قطع غيار وصيانة</span>
@@ -396,7 +407,7 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 <div class="step"><svg class="cv-step-icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#cv-i-check"></use></svg><span>04</span>استلام واعتماد وإغلاق</div></div>
 </section>
 <section class="section" id="practice" aria-labelledby="practice-title">
-<div class="section-head"><span class="icon-square" aria-hidden="true"><svg class="cv-section-icon" viewBox="0 0 24 24"><use href="#cv-i-clipboard"></use></svg></span><div><h2 id="practice-title">كيف أتعامل مع مواقف المشتريات؟</h2><p>نماذج توضح طريقة العمل، دون نشر حالات أو بيانات سرية من جهة العمل</p></div></div>
+<div class="section-head"><span class="icon-square" aria-hidden="true"><svg class="cv-section-icon" viewBox="0 0 24 24"><use href="#cv-i-clipboard"></use></svg></span><div><h2 id="practice-title">كيف أتعامل مع مواقف المشتريات؟</h2><p>أسلوب عملي لتنسيق التوريد وحل مشكلات المشتريات</p></div></div>
 <div class="cv-new-grid">
 <article class="tile"><h3>في حالة تأخر التوريد</h3><p>أتحقق من سبب التأخير والموعد المتوقع، وأراجع أولوية الصنف وتأثيره على التشغيل، ثم أطرح بدائل مطابقة للمواصفات الفنية على الإدارة والجهات المختصة، مع توثيق المتابعة.</p></article>
 <article class="tile"><h3>قبل تصنيع المطبوعات بكميات كبيرة</h3><p>أطلب عينة أو بروفة طبقًا للمواصفات، وأراجعها مع القسم المختص من حيث المقاس والمادة والمحتوى، ثم أتابع اعتمادها قبل بدء التنفيذ لتقليل احتمالات الخطأ والمرتجعات.</p></article>
@@ -407,17 +418,17 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 <div class="chip-list"><span class="skill">Procurement & Purchasing</span><span class="skill">Supplier Sourcing</span><span class="skill">RFQ / PO</span><span class="skill">Negotiation</span><span class="skill">Cost Analysis</span><span class="skill">Inventory Analysis</span><span class="skill">Supply Chain Coordination</span><span class="skill">ERP BAR</span><span class="skill">Microsoft Excel</span><span class="skill">Microsoft Word</span><span class="skill">Supplier Evaluation</span><span class="skill">Technical Specifications</span><span class="skill">Documentation</span><span class="skill">Reports & Follow-up</span></div>
 <div class="grid-two" style="margin-top:17px">
 <div class="tile"><h3>أدوات المتابعة وتحليل المشتريات</h3><p>استخدام ERP BAR وMicrosoft Excel وWord في تسجيل ومتابعة الطلبات وتحليل الأصناف وإعداد التقارير وتوثيق المعاملات المهنية.</p></div>
-<div class="tile"><h3>اللغات والتكيف المهني</h3><p>العربية: اللغة الأم. الإنجليزية: مستوى جيد وفق السيرة المقدمة. خبرة في التعامل مع ERP BAR منذ 2024، واستخدام Excel وWord، والاستعداد للتكيف مع أنظمة المشتريات الأخرى.</p></div>
+<div class="tile"><h3>اللغات والتكيف المهني</h3><p>العربية: اللغة الأم. أعمل على تطوير استخدام الإنجليزية في التواصل والمصطلحات المهنية. أستخدم ERP BAR منذ 2024، إلى جانب Excel وWord، وأتكيف مع أنظمة المشتريات المختلفة.</p></div>
 </div>
 </section>
 <section class="section" id="education" aria-labelledby="education-title">
 <div class="section-head"><span class="icon-square" aria-hidden="true"><svg class="cv-section-icon" viewBox="0 0 24 24"><use href="#cv-i-book"></use></svg></span><div><h2 id="education-title">المكتبات والمعلومات | Library and Information Science</h2><p>المؤهل الأكاديمي منفصل عن الخبرة الوظيفية في المشتريات</p></div></div>
 <div class="grid-two">
-<article class="tile"><h3>ليسانس الآداب — جامعة المنيا</h3><p>التخصص الأكاديمي: المكتبات والمعلومات. دراسة ذات صلة بتنظيم المعلومات والبحث والتوثيق واسترجاع البيانات، دون الادعاء بوجود خبرة وظيفية في مكتبة غير مثبتة.</p></article>
+<article class="tile"><h3>ليسانس الآداب — جامعة المنيا</h3><p>التخصص الأكاديمي: المكتبات والمعلومات. دراسة ترتكز على تنظيم المعلومات والبحث والتوثيق واسترجاع البيانات، وهي مهارات داعمة للعمل في المشتريات.</p></article>
 <article class="tile"><h3>كيف تدعم الدراسة عملي في المشتريات؟</h3><p>الترتيب المنهجي للمستندات وعروض الأسعار، تتبع البيانات والموردين، توثيق حركة الطلبات، والبحث عن البدائل الفنية والمصادر الموثوقة.</p></article>
 </div></section>
 <section class="section" id="projects" aria-labelledby="projects-title">
-<div class="section-head"><span class="icon-square" aria-hidden="true"><svg class="cv-section-icon" viewBox="0 0 24 24"><use href="#cv-i-code"></use></svg></span><div><h2 id="projects-title">مشروعات رقمية مستقلة</h2><p>أمثلة منشورة علنًا على GitHub تعكس البحث وتنظيم المعلومات وحل المشكلات التقنية؛ مستقلة عن بيانات جهة العمل</p></div></div>
+<div class="section-head"><span class="icon-square" aria-hidden="true"><svg class="cv-section-icon" viewBox="0 0 24 24"><use href="#cv-i-code"></use></svg></span><div><h2 id="projects-title">مشروعات رقمية مستقلة</h2><p>مشروعات رقمية تعكس مهارات البحث وتنظيم البيانات وحل المشكلات</p></div></div>
 <div class="cv-new-grid">
 <article class="tile"><h3>أداة ضغط الصور وتغيير أبعادها</h3><p>أداة تعمل بالمتصفح لتحسين الصور وإدارة الصيغ والأحجام، تعكس الاهتمام بتحسين تجربة المستخدم والكفاءة الرقمية.</p><a class="cv-project-link" target="_blank" rel="noopener noreferrer" href="https://github.com/majdfatihy/image-compressor">عرض المشروع على GitHub</a></article>
 <article class="tile"><h3>تحويل وتنظيم بيانات جهات الاتصال</h3><p>أداة لتحويل ملفات جهات الاتصال بين صيغ vCard وCSV وExcel، مع التركيز على تنظيم البيانات وسهولة استخدامها.</p><a class="cv-project-link" target="_blank" rel="noopener noreferrer" href="https://github.com/majdfatihy/facebook-contacts-converter">عرض المشروع على GitHub</a></article>
@@ -428,7 +439,7 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 <details class="details"><summary>هل يمكنني إدارة دورة مشتريات كاملة؟</summary><p>أتعامل مع تحليل الطلبات ومراجعة المواصفات وطلب عروض الأسعار والمفاوضات والأوامر والمتابعة والتسلم والمرتجعات والتقارير والإغلاق، وفق السيستم والصلاحيات المعتمدة.</p></details>
 <details class="details"><summary>هل لدي خبرة في شراء مستلزمات مصانع طبية؟</summary><p>نعم، خبرتي العملية تشمل بيئة تصنيع الكواشف التشخيصية: مواد التعبئة والتغليف، الخامات البلاستيكية والكيميائية، ومستلزمات المعامل والمعدات وقطع الغيار.</p></details>
 <details class="details"><summary>هل يمكنني العمل على أنظمة ERP مختلفة؟</summary><p>أعمل على ERP BAR منذ عام 2024، مع استخدام Excel وWord والتوثيق الإلكتروني، ولدي قابلية للتكيف مع الأنظمة الأخرى حسب بيئة العمل.</p></details>
-<details class="details"><summary>ما العلاقة بين المشتريات والمكتبات والمعلومات؟</summary><p>المشتريات هي مساري العملي الحالي، بينما تنظيم المعلومات والبحث والتوثيق مهارات ومعارف داعمة من مجال المكتبات والمعلومات. لا أقدّم ذلك كخبرة وظيفية في مكتبة دون سجل عمل مؤكد.</p></details>
+<details class="details"><summary>ما العلاقة بين المشتريات والمكتبات والمعلومات؟</summary><p>المشتريات هي مجال عملي، بينما يدعم تخصص المكتبات والمعلومات مهارات البحث عن الموردين، وتنظيم عروض الأسعار والمستندات، والتوثيق وتحليل البيانات.</p></details>
 </section>
 <section class="section" id="contact">
 <div class="section-head"><span class="icon-square" aria-hidden="true"><svg class="cv-section-icon" viewBox="0 0 24 24"><use href="#cv-i-mail"></use></svg></span><div><h2>التواصل المهني</h2><p>للتوظيف والتعاون وفرص العمل في المشتريات الصناعية والطبية</p></div></div>
@@ -451,7 +462,13 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 </div>
 <article id="print-cv" lang="ar" dir="rtl" aria-label="نسخة السيرة الذاتية للطباعة">
 <section class="p-page">
-  <header class="p-header"><div><div class="p-kicker">السيرة الذاتية المهنية | PROFESSIONAL CV</div><div class="p-name">ماجد فتحي</div><div class="p-en" lang="en">MAJD FATIHY — PROCUREMENT SPECIALIST</div><h2>أخصائي مشتريات | القطاع الطبي والصناعي</h2></div><div class="p-head-side"><strong>المنيا، مصر</strong><span>مايو 2024 — حتى الآن</span><span>info@majdfatihy.com</span><span>واتساب: 01066732514</span></div></header>
+<div class="p-print-top"><a class="p-print-url" href="https://dev.majdfatihy.com/procurement-specialist/">dev.majdfatihy.com/procurement-specialist/</a>
+<nav class="p-print-actions" aria-label="روابط التواصل المهنية">
+<a href="mailto:info@majdfatihy.com" aria-label="البريد الإلكتروني"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>Email</a>
+<a href="https://api.whatsapp.com/send?phone=201066732514" aria-label="واتساب"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11a9 9 0 0 1-13 8l-5 2 2-5A9 9 0 1 1 21 11Z"/><path d="M9 9a7 7 0 0 0 6 6"/></svg>WhatsApp</a>
+<a href="https://t.me/majdfatihy" aria-label="تيليجرام"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-8-9-4 20-8Z"/><path d="m11 14 11-12"/></svg>Telegram</a>
+</nav></div>
+  <header class="p-header"><div><div class="p-kicker">السيرة الذاتية المهنية | PROFESSIONAL CV</div><div class="p-name">ماجد فتحي</div><div class="p-en" lang="en">MAJD FATIHY — PROCUREMENT SPECIALIST</div><h2>أخصائي مشتريات | القطاع الطبي والصناعي</h2></div><div class="p-head-side"><strong>المنيا، مصر</strong><span>مايو 2024 — حتى الآن</span><a href="mailto:info@majdfatihy.com">info@majdfatihy.com</a><a href="https://api.whatsapp.com/send?phone=201066732514">واتساب: 01066732514</a></div></header>
   <div class="p-heading">الملف المهني</div>
   <p class="p-intro">أخصائي مشتريات في بيئة تصنيع الكواشف التشخيصية. أتعامل مع دورة الشراء من تحليل الاحتياج والمواصفات الفنية إلى تأهيل الموردين، طلب عروض الأسعار، التفاوض، إصدار أوامر الشراء، متابعة التوريد، اعتماد العينات، إدارة المرتجعات وإغلاق الطلبات. أعمل بالتنسيق مع أقسام الجودة والإنتاج والصيانة والمخازن والمالية.</p>
   <div class="p-heading">الخبرة العملية</div>
@@ -474,9 +491,15 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
     <div class="p-card"><b>الماكينات والصيانة</b><p>خطوط الإنتاج، قطع الغيار، التوريد المحلي وبحث بدائل الاستيراد.</p></div>
   </div>
   <div class="p-flow"><span>تحليل الطلب</span><span>عروض وموردون</span><span>التفاوض وأمر الشراء</span><span>الاستلام والإغلاق</span></div>
-  <div class="p-foot"><span>ماجد فتحي | أخصائي مشتريات طبية وصناعية</span><span>1 / 2</span></div>
+  <div class="p-foot"><span>ماجد فتحي | أخصائي مشتريات طبية وصناعية</span><span>طُبع: <time class="cv-printed-at"></time></span><span>1 / 2</span></div>
 </section>
 <section class="p-page">
+<div class="p-print-top"><a class="p-print-url" href="https://dev.majdfatihy.com/procurement-specialist/">dev.majdfatihy.com/procurement-specialist/</a>
+<nav class="p-print-actions" aria-label="روابط التواصل المهنية">
+<a href="mailto:info@majdfatihy.com" aria-label="البريد الإلكتروني"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>Email</a>
+<a href="https://api.whatsapp.com/send?phone=201066732514" aria-label="واتساب"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11a9 9 0 0 1-13 8l-5 2 2-5A9 9 0 1 1 21 11Z"/><path d="M9 9a7 7 0 0 0 6 6"/></svg>WhatsApp</a>
+<a href="https://t.me/majdfatihy" aria-label="تيليجرام"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-8-9-4 20-8Z"/><path d="m11 14 11-12"/></svg>Telegram</a>
+</nav></div>
   <header class="p-small-head"><strong>ماجد فتحي</strong><span>PROCUREMENT &amp; PURCHASING SPECIALIST</span></header>
   <div class="p-heading">المهام التحليلية والإدارية</div>
   <div class="p-grid">
@@ -489,12 +512,12 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
   <div class="p-pills"><span>ERP BAR (منذ 2024)</span><span>Microsoft Excel</span><span>Microsoft Word</span><span>Supplier Sourcing</span><span>RFQ / PO</span><span>Negotiation</span><span>Cost Analysis</span><span>Inventory Analysis</span><span>Supply Chain Coordination</span><span>Technical Specifications</span><span>Reporting</span></div>
   <div class="p-grid p-education">
     <div class="p-card"><b>المؤهل العلمي</b><p>ليسانس الآداب — جامعة المنيا، تخصص المكتبات والمعلومات، مع معارف في التوثيق وتنظيم البيانات والبحث واسترجاع المعلومات.</p></div>
-    <div class="p-card"><b>اللغات وبيئة العمل</b><p>العربية: اللغة الأم. الإنجليزية: مستوى جيد وفق السيرة المقدمة. خبرة عملية في ERP BAR والقدرة على التكيف مع أنظمة العمل.</p></div>
+    <div class="p-card"><b>اللغات وبيئة العمل</b><p>العربية: اللغة الأم. أعمل على تطوير الإنجليزية المهنية. أستخدم ERP BAR وأتكيف مع أنظمة العمل المختلفة.</p></div>
   </div>
   <div class="p-heading">مزايا مهنية إضافية</div>
   <p>خبرة في صناعة المحتوى التقني على YouTube منذ 2016 حتى الآن، تشمل البحث وتبسيط الشروحات والتواصل الرقمي، إلى جانب الخبرة الصناعية وتنظيم المعلومات.</p>
-  <div class="p-contact"><b>للتواصل بشأن فرص العمل</b><div>البريد: <span>info@majdfatihy.com</span> | واتساب: <span>01066732514</span> | تيليجرام: <span>@majdfatihy</span></div><div class="p-source">الملف المهني: https://dev.majdfatihy.com/procurement-specialist/</div></div>
-  <div class="p-foot"><span>ماجد فتحي | أخصائي مشتريات طبية وصناعية</span><span>2 / 2</span></div>
+  <div class="p-contact"><b>للتواصل بشأن فرص العمل</b><div class="p-contact-links"><a href="mailto:info@majdfatihy.com">info@majdfatihy.com</a> · <a href="https://api.whatsapp.com/send?phone=201066732514">واتساب: 01066732514</a> · <a href="https://t.me/majdfatihy">تيليجرام: @majdfatihy</a></div></div>
+  <div class="p-foot"><span>ماجد فتحي | أخصائي مشتريات طبية وصناعية</span><span>طُبع: <time class="cv-printed-at"></time></span><span>2 / 2</span></div>
 </section>
 </article>
 <div id="copyStatus" class="copy-status" role="status" aria-live="polite"></div>
@@ -520,6 +543,13 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
       }
     });
   });
+  function updatePrintTimestamp(){
+    var date=new Date();
+    var stamped=new Intl.DateTimeFormat('ar-EG-u-nu-latn',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(date);
+    document.querySelectorAll('.cv-printed-at').forEach(function(el){el.textContent=stamped;});
+  }
+  updatePrintTimestamp();
+  window.addEventListener('beforeprint',updatePrintTimestamp);
   var canvas=document.getElementById('network');
   if(!canvas||!canvas.getContext)return;
   var ctx=canvas.getContext('2d',{alpha:true});
