@@ -31,18 +31,50 @@ a{color:#075e82}
 @media(max-width:600px){main{padding:24px 20px}.toolbar{margin:8px;flex-wrap:wrap}.toolbar button,.toolbar a{flex:1;text-align:center}h1{font-size:25px}}
 @page{size:A4;margin:14mm}
 @media print{@page{size:A4;margin:10mm}html,body{background:#fff!important;margin:0!important;color:#111!important;line-height:1.37}main{box-shadow:none;max-width:none;width:auto;margin:0;padding:0;line-height:1.37} .toolbar{display:none!important} header{padding-bottom:7px} section{margin-top:9px;break-inside:auto}h2{font-size:12pt;margin:2px 0 4px}h3{font-size:11pt;margin:0 0 4px;padding-bottom:3px}li{break-inside:avoid;margin:1.5px 0}ul{margin:4px 0 0}h2,h3{break-after:avoid}a{color:#111;text-decoration:none}p,li{font-size:8.8pt;line-height:1.45}.meta{font-size:8.5pt;line-height:1.45}h1{font-size:20pt}.english{font-size:8pt}}
+/* Print source, frame and time apply to saved PDFs as well as browser printing. */
+.ats-contacts{display:flex;flex-wrap:wrap;gap:7px 14px;align-items:center;margin:8px 0}
+.ats-contacts a{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;direction:ltr}
+.ats-contacts svg{height:15px;width:15px;flex:none;fill:none;stroke:#087ca5;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ats-print-frame,.ats-print-header,.ats-print-footer{display:none}
+@media print{
+ @page{size:A4;margin:18mm 16mm 17mm}
+ .ats-print-frame{display:block;position:fixed;inset:-12mm -11mm;border:1px solid #8dbdcd;border-radius:2.5mm;pointer-events:none}
+ .ats-print-header{display:block;position:fixed;top:-12mm;left:0;right:0;border-bottom:1px solid #c7dfe7;padding-bottom:1.2mm;color:#416275;font:7.8pt Arial,sans-serif;direction:ltr;text-align:left}
+ .ats-print-header a{color:#176685;text-decoration:none}
+ .ats-print-footer{display:flex;position:fixed;bottom:-12mm;left:0;right:0;align-items:center;justify-content:space-between;border-top:1px solid #c7dfe7;padding-top:1.2mm;color:#506f7e;font:7.5pt Tahoma,Arial,sans-serif}
+ .ats-contacts{gap:5px 9px;margin:4px 0}
+ .ats-contacts a{font-size:8pt}
+ .ats-contacts svg{width:11px;height:11px}
+ .ats-site-link{display:none}
+ main{padding:0}
+ header{padding-bottom:5px}
+ section{margin-top:7px}
+ h3{font-size:10pt;margin:0 0 3px}
+ p,li{font-size:8.1pt;line-height:1.39}
+ li{margin:1px 0}
+ h1{font-size:19pt}
+ h2{font-size:11pt;margin:1px 0 3px}
+ ul{margin:3px 0 0}
+}
 </style>
 </head>
 <body>
 <div class="toolbar" aria-label="أدوات السيرة الذاتية"><p>نسخة مبسطة بنص قابل للتحديد والنسخ ومناسبة للحفظ بصيغة PDF للتقديم على الوظائف.</p><a href="./">العودة للملف المهني</a><button type="button" onclick="window.print()">طباعة / حفظ PDF</button></div>
+<div class="ats-print-frame" aria-hidden="true"></div>
+<div class="ats-print-header"><a href="https://dev.majdfatihy.com/procurement-specialist/">dev.majdfatihy.com/procurement-specialist/</a></div>
+<div class="ats-print-footer"><span>ماجد فتحي | أخصائي مشتريات</span><span>تاريخ ووقت الطباعة: <time class="cv-printed-at" aria-label="تاريخ الطباعة"></time></span></div>
 <main>
 <header>
 <h1>ماجد فتحي</h1>
 <div class="english" lang="en">Majd Fatihy · Procurement &amp; Purchasing Specialist</div>
 <h2>أخصائي مشتريات طبية وصناعية | المشتريات وسلسلة الإمداد</h2>
 <p class="meta">المنيا، مصر | خبرة عملية: مايو 2024 — حتى الآن</p>
-<p class="meta">واتساب: <a href="https://api.whatsapp.com/send?phone=201066732514">01066732514</a> | البريد: <a href="mailto:info@majdfatihy.com">info@majdfatihy.com</a> | تيليجرام: <a href="https://t.me/majdfatihy">@majdfatihy</a></p>
-<p class="meta">الملف المهني: <a href="https://dev.majdfatihy.com/procurement-specialist/">dev.majdfatihy.com/procurement-specialist/</a></p>
+<div class="ats-contacts" aria-label="روابط التواصل المهني">
+<a href="mailto:info@majdfatihy.com" aria-label="إرسال بريد إلكتروني"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg><span>info@majdfatihy.com</span></a>
+<a href="https://api.whatsapp.com/send?phone=201066732514" aria-label="فتح واتساب"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11a9 9 0 0 1-13 8l-5 2 2-5A9 9 0 1 1 21 11Z"/><path d="M9 9a7 7 0 0 0 6 6"/></svg><span>01066732514</span></a>
+<a href="https://t.me/majdfatihy" aria-label="حساب تيليجرام"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-8-9-4 20-8Z"/><path d="m11 14 11-12"/></svg><span>@majdfatihy</span></a>
+</div>
+<p class="meta ats-site-link">الملف المهني: <a href="https://dev.majdfatihy.com/procurement-specialist/">dev.majdfatihy.com/procurement-specialist/</a></p>
 </header>
 <section aria-labelledby="summary"><h3 id="summary">الملخص المهني</h3>
 <p>أخصائي مشتريات في القطاع الطبي والتصنيعي، بخبرة عملية منذ مايو 2024 داخل مصنع للكواشف التشخيصية. أتابع دورة المشتريات بدءًا من استلام الطلبات وتدقيق المواصفات الفنية وطلب عروض الأسعار، مرورًا بالمفاوضات وأوامر الشراء، وحتى متابعة التوريد والاستلام والمرتجعات وإغلاق العمليات. أعمل على التنسيق بين الموردين والإنتاج والجودة والصيانة والمخازن والمالية مع توثيق ومتابعة المستجدات.</p>
@@ -72,7 +104,17 @@ a{color:#075e82}
 <section aria-labelledby="education"><h3 id="education">المؤهل العلمي | المكتبات والمعلومات</h3>
 <p>ليسانس الآداب — جامعة المنيا، تخصص المكتبات والمعلومات (Library and Information Science). خلفية أكاديمية في تنظيم المعلومات والتوثيق والبحث واسترجاع المعلومات، مع خبرة عملية أساسية في المشتريات.</p>
 </section>
-<section aria-labelledby="languages"><h3 id="languages">اللغات</h3><p>العربية: اللغة الأم. الإنجليزية: مستوى جيد وفق البيانات الواردة في السيرة الأصلية.</p></section>
+<section aria-labelledby="languages"><h3 id="languages">اللغات</h3><p>العربية: اللغة الأم. الإنجليزية: أعمل على تطوير التواصل والمصطلحات المهنية.</p></section>
 </main>
+<script>
+(function(){
+ function stamp(){
+  var text=new Intl.DateTimeFormat('ar-EG-u-nu-latn',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}).format(new Date());
+  document.querySelectorAll('.cv-printed-at').forEach(function(el){el.textContent=text});
+ }
+ stamp();
+ addEventListener('beforeprint',stamp);
+})();
+</script>
 </body>
 </html>
