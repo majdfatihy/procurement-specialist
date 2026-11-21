@@ -93,4 +93,35 @@ for(const phrase of ['Procurement Specialist','Purchasing Specialist','Procureme
  has(en,phrase,'English related purchasing specialization '+phrase);
 }
 
+const unsupportedClaims=[
+ 'مستوى جيد وفق السيرة المقدمة',
+ 'مستوى جيد وفق البيانات الواردة في السيرة الأصلية',
+ 'لا أقدّم ذلك كخبرة وظيفية',
+ 'دون الادعاء بوجود خبرة وظيفية',
+ 'these are not claims of having held every listed job title',
+ 'not confidential employer case studies',
+ 'proficiency can be discussed during an interview',
+ 'No internal supplier or employer financial data is published here'
+];
+for(const phrase of unsupportedClaims){
+ assert.ok(!site.includes(phrase) && !ats.includes(phrase) && !en.includes(phrase),
+ 'Remove unprofessional / inaccurate language from published CV: '+phrase);
+}
+has(site,'#print-cv .p-page::before','Border on each professional Arabic A4 page');
+assert.equal((site.match(/class="p-print-top"/g)||[]).length,2,'Each Arabic page has a source/link header');
+assert.equal((site.match(/class="cv-printed-at"/g)||[]).length,2,'Each Arabic page has print timestamp');
+has(site,"beforeprint',updatePrintTimestamp",'Update Arabic print time on each print');
+for(const target of ['mailto:info@majdfatihy.com','https://api.whatsapp.com/send?phone=201066732514','https://t.me/majdfatihy']){
+ assert.ok(site.slice(site.indexOf('<article id="print-cv"')).includes(target),'Printable Arabic contact links: '+target);
+ assert.ok(ats.includes(target),'ATS contact hyperlink: '+target);
+ assert.ok(en.includes(target),'English contact hyperlink: '+target);
+}
+has(ats,'class="ats-print-frame"','ATS frame');
+has(ats,'class="ats-print-header"','ATS source link');
+has(ats,'class="ats-print-footer"','ATS print time');
+has(en,'class="en-print-frame"','English printable frame');
+has(en,'class="en-print-head"','English printable source and contacts');
+has(en,'class="en-print-foot"','English printed timestamp');
+has(en,"addEventListener('beforeprint',stamp)",'English print timestamp on demand');
+
 console.log('PASS: bilingual SEO, browser language, page-only favicon, icons, privacy and PDF downloads.');
