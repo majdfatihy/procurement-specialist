@@ -95,8 +95,40 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
 @media(max-width:650px){.en-section-icon{width:21px;height:21px}.en-role-tags{gap:6px}.en-role-tags span{font-size:11px}}
 @media print{#roles{display:none!important}}
 </style>
-</head>
+<style id="cv-en-print-professional">
+.en-print-decor{display:none}
+@media print{
+ @page{size:A4;margin:21mm 16mm 19mm}
+ html,body{color:#152d40!important;overflow:visible!important;background:#fff!important}
+ .en-print-decor{display:block!important}
+ .en-print-frame{position:fixed;top:-15.5mm;left:-11mm;right:-11mm;bottom:-13.5mm;pointer-events:none;border:1px solid #91bfce;border-radius:2mm}
+ .en-print-head{position:fixed;top:-13.5mm;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:9mm;border-bottom:1px solid #cedee8;padding-bottom:1.8mm;font:7.4pt Arial,sans-serif;white-space:nowrap}
+ .en-print-head>a{direction:ltr;text-decoration:none;color:#0a688b;white-space:nowrap}
+ .en-print-head .print-links{display:flex;align-items:center;gap:3mm}
+ .en-print-head .print-links a{font:7pt Arial,sans-serif;display:inline-flex;gap:1mm;align-items:center;color:#0a6385;text-decoration:none}
+ .en-print-head .print-links svg{width:10px;height:10px;fill:none;stroke:#067aa5;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+ .en-print-foot{position:fixed;bottom:-13mm;left:0;right:0;display:flex;justify-content:space-between;align-items:center;gap:4mm;border-top:1px solid #cedee8;padding-top:1.8mm;color:#42657b;font:7.4pt Arial,sans-serif}
+ .page{padding:0!important}
+ .intro h1{font-size:24pt}
+ .intro,.section{margin-bottom:6mm}
+ .section p,.tile p,.tile li{font-size:8.2pt;line-height:1.36}
+ .section h2{font-size:12pt;margin-bottom:1.5mm}
+ .tile{padding:2mm 2.7mm}
+ .job{margin:2mm 0 4mm}
+ .grid{gap:2.4mm}
+ .tile h3{margin-bottom:1mm}
+}
+</style></head>
 <body>
+<div class="en-print-decor">
+<div class="en-print-frame" aria-hidden="true"></div>
+<div class="en-print-head"><a href="https://dev.majdfatihy.com/procurement-specialist/en/">dev.majdfatihy.com/procurement-specialist/en/</a><nav class="print-links" aria-label="Professional contact links">
+<a href="mailto:info@majdfatihy.com" aria-label="Email Majd Fatihy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>Email</a>
+<a href="https://api.whatsapp.com/send?phone=201066732514" aria-label="WhatsApp Majd Fatihy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11a9 9 0 0 1-13 8l-5 2 2-5A9 9 0 1 1 21 11Z"/><path d="M9 9a7 7 0 0 0 6 6"/></svg>WhatsApp</a>
+<a href="https://t.me/majdfatihy" aria-label="Telegram Majd Fatihy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-8-9-4 20-8Z"/><path d="m11 14 11-12"/></svg>Telegram</a>
+</nav></div>
+<div class="en-print-foot"><span>Majd Fatihy | Procurement Specialist</span><span>Printed: <time class="en-printed-at"></time></span></div>
+</div>
 <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <symbol id="cv-i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></symbol>
@@ -134,7 +166,7 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
 <section class="section" id="summary"><h2><svg class="en-section-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#cv-i-target"></use></svg>Professional summary</h2><p class="sub">What I can contribute</p><p>I support reliable manufacturing operations by sourcing materials and services in line with approved specifications and budgets. My responsibilities include evaluating suppliers and quotations, negotiating terms, tracking order fulfilment, coordinating incoming materials and maintaining clear records for production, quality, warehousing, maintenance and finance teams.</p></section>
 <section class="section" id="roles" aria-labelledby="en-roles-title">
 <h2 id="en-roles-title"><svg class="en-section-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#cv-i-users"></use></svg>Related procurement job titles &amp; specialties</h2>
-<p class="sub">Terms used in recruitment searches for similar responsibilities; these are not claims of having held every listed job title.</p>
+<p class="sub">Related purchasing roles and industrial sourcing specializations.</p>
 <p>My work is centered on purchasing for medical and industrial manufacturing: raw materials, packaging, chemicals, laboratory requirements, production machinery and maintenance spare parts, plus supplier sourcing and order follow-up.</p>
 <div class="en-role-tags">
 <span>Procurement Specialist</span><span>Purchasing Specialist</span><span>Procurement Officer</span><span>Purchasing Officer</span><span>Purchasing Coordinator</span><span>Sourcing Specialist</span><span>Technical Buyer</span><span>Industrial Buyer</span><span>Medical Procurement</span><span>Industrial Purchasing</span><span>Manufacturing Procurement</span><span>Raw Materials Procurement</span><span>Packaging Procurement</span><span>Laboratory Supplies Purchasing</span><span>Spare Parts Sourcing</span><span>Supply Chain Procurement</span>
@@ -160,7 +192,7 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
 <article class="tile"><h3>Lab and medical equipment</h3><p>Laboratory supplies, medical consumables, electrical devices and technical equipment as specified.</p></article>
 <article class="tile"><h3>Machines and maintenance</h3><p>Production lines, machinery, spare parts and alternatives sourced locally or from international markets where available.</p></article>
 </div></section>
-<section class="section practice-section" id="practice"><h2><svg class="en-section-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#cv-i-clipboard"></use></svg>How I approach procurement scenarios</h2><p class="sub">Illustrative workflows based on responsibilities, not confidential employer case studies</p>
+<section class="section practice-section" id="practice"><h2><svg class="en-section-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#cv-i-clipboard"></use></svg>How I approach procurement scenarios</h2><p class="sub">Practical procurement methods for sourcing and delivery coordination</p>
 <div class="grid three">
 <article class="tile"><h3>When delivery is delayed</h3><p>Verify the supplier's revised schedule, assess operational priority, identify technically acceptable alternatives, coordinate approvals, and document the escalation and revised plan.</p></article>
 <article class="tile"><h3>Before bulk printing</h3><p>Request a physical sample or proof, compare it with approved artwork and specifications, obtain the relevant department's confirmation, then authorize the next stage within the purchasing process.</p></article>
@@ -170,9 +202,9 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
 <section class="section" id="education"><h2><svg class="en-section-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#cv-i-book"></use></svg>Education and professional adaptability</h2>
 <div class="grid">
 <article class="tile"><h3>Bachelor of Arts · Minya University</h3><p>Library and Information Science. Academic knowledge in organizing information, research, documentation and information retrieval, applied as supporting skills to procurement work.</p></article>
-<article class="tile"><h3>Systems and languages</h3><p>Practical use of ERP BAR since 2024 and Microsoft Office; adaptability to other workflow systems. Arabic: native. English: developing working proficiency; proficiency can be discussed during an interview.</p></article>
+<article class="tile"><h3>Systems and languages</h3><p>Practical use of ERP BAR since 2024 and Microsoft Office; adaptability to other workflow systems. Arabic: native. English: actively improving professional communication.</p></article>
 </div></section>
-<section class="section projects-section" id="projects"><h2><svg class="en-section-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#cv-i-code"></use></svg>Independent digital projects</h2><p class="sub">Personal public projects; separate from employer information and procurement records</p>
+<section class="section projects-section" id="projects"><h2><svg class="en-section-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#cv-i-code"></use></svg>Independent digital projects</h2><p class="sub">Digital tools demonstrating information organization and technical problem solving</p>
 <div class="grid three">
 <article class="tile"><h3>Image Compressor &amp; Resizer</h3><p>A browser-based tool for image optimization and resizing. Demonstrates practical problem solving and interest in web performance.</p><a href="https://github.com/majdfatihy/image-compressor" target="_blank" rel="noopener noreferrer">View source on GitHub</a></article>
 <article class="tile"><h3>Facebook Contacts Converter</h3><p>An in-browser contact data converter supporting vCard, CSV and Excel, illustrating structured data handling and export workflows.</p><a href="https://github.com/majdfatihy/facebook-contacts-converter" target="_blank" rel="noopener noreferrer">View source on GitHub</a></article>
@@ -183,13 +215,21 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
 <details><summary>Have I sourced items for medical production?</summary><p>Yes. My experience includes packaging, plastic parts, chemicals, laboratory consumables, production equipment and spare parts in a diagnostic-manufacturing setting.</p></details>
 <details><summary>Am I familiar with procurement software?</summary><p>I have worked with ERP BAR since 2024 and use Excel and Word for tracking, analysis and documentation. I can learn new systems according to business processes.</p></details>
 </section>
-<section class="section contact-section" id="contact"><h2><svg class="en-section-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#cv-i-mail"></use></svg>Contact for procurement opportunities</h2><p>Available for conversations about suitable purchasing, sourcing and supply coordination roles. No internal supplier or employer financial data is published here.</p>
+<section class="section contact-section" id="contact"><h2><svg class="en-section-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#cv-i-mail"></use></svg>Contact for procurement opportunities</h2><p>Available for conversations about suitable purchasing, sourcing and supply coordination roles.</p>
 <div class="contact"><a id="emailEn" href="mailto:info@majdfatihy.com"><small>Professional email</small>info@majdfatihy.com</a><a href="https://api.whatsapp.com/send?phone=201066732514" target="_blank" rel="noopener noreferrer"><small>WhatsApp</small>+20 106 673 2514</a><a href="https://t.me/majdfatihy" target="_blank" rel="noopener noreferrer"><small>Telegram</small>@majdfatihy</a></div></section>
 </main>
 <footer><span>© 2026 Majd Fatihy · Procurement Specialist</span><span class="links"><a href="../?lang=ar" lang="ar" hreflang="ar-EG">العربية</a><a href="https://github.com/majdfatihy" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.youtube.com/@MajdFatihy" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/majdfatihy" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://dev.majdfatihy.com/privacy.html">Privacy</a><a href="https://dev.majdfatihy.com/terms.html">Terms</a></span></footer>
 </div>
 <div class="mobile-bar" hidden><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=201066732514" target="_blank" rel="noopener noreferrer">WhatsApp</a><a class="btn" href="../majd-fatihy-cv-en.pdf" download="Majd-Fatihy-Procurement-CV-EN.pdf">Download PDF</a></div>
 <script>
+(function(){
+ const stamp=function(){
+  const value=new Intl.DateTimeFormat('en-GB',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());
+  document.querySelectorAll('.en-printed-at').forEach(el=>el.textContent=value);
+ };
+ stamp();
+ addEventListener('beforeprint',stamp);
+})();
 (function(){const a=document.getElementById('emailEn');if(!a)return;
 const source=location.protocol.startsWith('http')?location.origin+location.pathname:'https://dev.majdfatihy.com/procurement-specialist/en/';
 const subject='Procurement opportunity — Majd Fatihy';
