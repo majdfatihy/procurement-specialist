@@ -100,6 +100,15 @@ async def audit():
                     width,"Menu did not close after navigation")
                 assert await page.evaluate("location.hash")=="#experience",(
                     width,"Section navigation failed")
+                if width<=600:
+                    await page.evaluate("document.querySelector('.hero-actions').scrollIntoView({behavior:'instant',block:'center'})")
+                    await page.wait_for_timeout(280)
+                    assert not await page.locator('.mobile-quick-actions').is_visible(),(
+                        width,"Sticky actions overlap main hero buttons")
+                    await page.evaluate("window.scrollTo({top:document.body.scrollHeight,behavior:'instant'})")
+                    await page.wait_for_timeout(280)
+                    assert await page.locator('.mobile-quick-actions').is_visible(),(
+                        width,"Sticky actions unavailable after scrolling")
             else:
                 assert await page.locator(".desktop-nav").is_visible(),(
                     width,"Desktop navigation hidden")
