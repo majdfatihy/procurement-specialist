@@ -51,7 +51,16 @@ async def main():
             assert check["title"]=="Majd Fatihy",(w,"Incorrect name")
             assert len(check["sections"])>=9,(w,"Missing English sections")
             assert check["contacts"]>=3,(w,"Missing professional contact links")
-            assert check["actionsVisible"]==(w<=650),(w,"Mobile actions visibility")
+            if w <= 650:
+                # The floating bar must never cover the primary contact buttons.
+                await page.evaluate("document.querySelector('.intro .actions').scrollIntoView({behavior:'instant',block:'center'})")
+                await page.wait_for_timeout(280)
+                assert not await page.locator(".mobile-bar").is_visible(),(w,"Sticky actions overlap visible hero actions")
+                await page.evaluate("window.scrollTo({top: document.body.scrollHeight,behavior:'instant'})")
+                await page.wait_for_timeout(280)
+                assert await page.locator(".mobile-bar").is_visible(),(w,"Sticky actions missing after scrolling")
+            else:
+                assert not check["actionsVisible"],(w,"Sticky actions visible on desktop")
             assert not errors,(w,"JS errors",errors)
             if w in (390,1440):
                 await page.screenshot(path=str(OUT/f"english-{w}.png"),full_page=True,animations="disabled")
