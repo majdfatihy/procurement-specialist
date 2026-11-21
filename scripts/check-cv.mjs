@@ -30,4 +30,42 @@ assert.ok(match,'Schema Person/ProfilePage is present');
 const schema=JSON.parse(match[1]);
 assert.ok(schema['@graph'].some(x=>x['@type']==='ProfilePage'),'ProfilePage schema');
 assert.ok(schema['@graph'].some(x=>x['@type']==='Person'),'Person schema');
-console.log('PASS: SEO, privacy, links, ATS, print and mobile-menu fixes.');
+const en=fs.readFileSync('en/index.html','utf8');
+const build=fs.readFileSync('scripts/build-site.sh','utf8');
+has(site,'hreflang="en" href="https://dev.majdfatihy.com/procurement-specialist/en/"','Arabic English alternate');
+has(en,'rel="canonical" href="https://dev.majdfatihy.com/procurement-specialist/en/"','English canonical');
+has(en,'hreflang="ar-EG" href="https://dev.majdfatihy.com/procurement-specialist/"','Reciprocal hreflang');
+has(en,'<html lang="en" dir="ltr">','English language declaration');
+assert.equal((en.match(/<h1\b/g)||[]).length,1,'English page has one heading');
+for(const href of ['./majd-fatihy-cv-ar.pdf','./majd-fatihy-cv-ats.pdf','./en/']) {
+  has(site,href,'Arabic action link '+href);
+}
+for(const href of ['../majd-fatihy-cv-en.pdf','../majd-fatihy-cv-ats.pdf']) {
+  has(en,href,'English direct PDF link '+href);
+}
+for(const url of [
+ 'https://github.com/majdfatihy/image-compressor',
+ 'https://github.com/majdfatihy/facebook-contacts-converter',
+ 'https://github.com/majdfatihy/online-earning-directory'
+]) {
+  has(site,url,'Verified project link on Arabic CV');
+  has(en,url,'Verified project link on English CV');
+}
+has(site,'id="practice"','Arabic procurement scenarios');
+has(site,'id="projects"','Arabic independent projects');
+has(en,'id="practice"','English procurement scenarios');
+has(en,'id="projects"','English independent projects');
+has(site,'class="mobile-quick-actions"','Arabic mobile contact and download');
+has(en,'class="mobile-bar"','English mobile contact and download');
+for(const file of ['majd-fatihy-cv-ar.pdf','majd-fatihy-cv-ats.pdf','majd-fatihy-cv-en.pdf']) {
+  has(build,file,'PDF generated during the deployment: '+file);
+}
+for(const val of ['7,551,859','112,878','105,000','436','7,000 جنيه']) {
+  assert.ok(!site.includes(val) && !en.includes(val), 'No confidential figures in public CV: '+val);
+}
+const schemaEn=JSON.parse(en.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1]||'{}');
+assert.ok(schemaEn['@graph']?.some(x=>x['@type']==='ProfilePage'),'English ProfilePage structured data');
+assert.equal((site.match(/GTM-KTQKNNC8/g)||[]).length,1,'Do not duplicate GTM on Arabic');
+assert.equal((en.match(/GTM-KTQKNNC8/g)||[]).length,1,'Do not duplicate GTM on English');
+
+console.log('PASS: Arabic and English SEO, safe content, projects, downloads, mobile actions, ATS and page structure.');
