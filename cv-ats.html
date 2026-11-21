@@ -37,16 +37,17 @@ a{color:#075e82}
 .ats-contacts svg{height:15px;width:15px;flex:none;fill:none;stroke:#087ca5;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .ats-print-frame,.ats-print-header,.ats-print-footer{display:none}
 @media print{
- @page{size:A4;margin:18mm 16mm 17mm}
- .ats-print-frame{display:block;position:fixed;inset:-12mm -11mm;border:1px solid #8dbdcd;border-radius:2.5mm;pointer-events:none}
- .ats-print-header{display:block;position:fixed;top:-12mm;left:0;right:0;border-bottom:1px solid #c7dfe7;padding-bottom:1.2mm;color:#416275;font:7.8pt Arial,sans-serif;direction:ltr;text-align:left}
+ @page{size:A4;margin:10mm}
+ body{display:flex;flex-direction:column;min-height:273mm;padding:4mm 5mm;border:1px solid #8dbdcd;border-radius:2mm;box-sizing:border-box}
+ .ats-print-frame{display:none!important}
+ .ats-print-header{display:block;position:static;border-bottom:1px solid #c7dfe7;padding-bottom:1.2mm;margin-bottom:3mm;color:#416275;font:7.8pt Arial,sans-serif;direction:ltr;text-align:left}
  .ats-print-header a{color:#176685;text-decoration:none}
- .ats-print-footer{display:flex;position:fixed;bottom:-12mm;left:0;right:0;align-items:center;justify-content:space-between;border-top:1px solid #c7dfe7;padding-top:1.2mm;color:#506f7e;font:7.5pt Tahoma,Arial,sans-serif}
+ .ats-print-footer{display:flex;position:static;margin-top:auto;align-items:center;justify-content:space-between;border-top:1px solid #c7dfe7;padding-top:1.2mm;color:#506f7e;font:7.5pt Tahoma,Arial,sans-serif}
  .ats-contacts{gap:5px 9px;margin:4px 0}
  .ats-contacts a{font-size:8pt}
  .ats-contacts svg{width:11px;height:11px}
  .ats-site-link{display:none}
- main{padding:0}
+ main{padding:0;flex:1}
  header{padding-bottom:5px}
  section{margin-top:7px}
  h3{font-size:10pt;margin:0 0 3px}
@@ -62,7 +63,6 @@ a{color:#075e82}
 <div class="toolbar" aria-label="أدوات السيرة الذاتية"><p>نسخة مبسطة بنص قابل للتحديد والنسخ ومناسبة للحفظ بصيغة PDF للتقديم على الوظائف.</p><a href="./">العودة للملف المهني</a><button type="button" onclick="window.print()">طباعة / حفظ PDF</button></div>
 <div class="ats-print-frame" aria-hidden="true"></div>
 <div class="ats-print-header"><a href="https://dev.majdfatihy.com/procurement-specialist/">dev.majdfatihy.com/procurement-specialist/</a></div>
-<div class="ats-print-footer"><span>ماجد فتحي | أخصائي مشتريات</span><span>تاريخ ووقت الطباعة: <time class="cv-printed-at" aria-label="تاريخ الطباعة"></time></span></div>
 <main>
 <header>
 <h1>ماجد فتحي</h1>
@@ -106,6 +106,7 @@ a{color:#075e82}
 </section>
 <section aria-labelledby="languages"><h3 id="languages">اللغات</h3><p>العربية: اللغة الأم. الإنجليزية: أعمل على تطوير التواصل والمصطلحات المهنية.</p></section>
 </main>
+<div class="ats-print-footer"><span>ماجد فتحي | أخصائي مشتريات</span><span>تاريخ ووقت الطباعة: <time class="cv-printed-at" aria-label="تاريخ الطباعة"></time></span></div>
 <script>
 (function(){
  function stamp(){
