@@ -77,6 +77,7 @@ h1{font-size:clamp(36px,4.6vw,56px);line-height:1.28;margin:16px 0 10px;letter-s
 footer{padding:20px 4px;color:#5c788b;font-size:11px;display:flex;gap:14px;justify-content:space-between;flex-wrap:wrap}
 footer .links{display:flex;gap:13px;flex-wrap:wrap}
 .mobile-bar{display:none}
+.mobile-bar[hidden]{display:none!important}
 @media(max-width:900px){.hero{grid-template-columns:1fr}.photo{flex-direction:row;text-align:left}.photo img{width:110px;height:130px}.grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{display:none}}
 @media(max-width:650px){.page{padding:12px 12px 85px}.top{padding:12px 14px}.brand{font-size:14px}.hero{gap:12px;margin-top:14px}.intro{padding:24px 19px}h1{font-size:38px}.quick{grid-template-columns:1fr}.section{padding:22px 18px;border-radius:19px;margin-top:13px}.grid,.grid.three{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.actions{display:grid;grid-template-columns:1fr 1fr}.actions a{padding:9px 7px;font-size:11px}.photo{gap:12px}.mobile-bar{display:flex;position:fixed;z-index:15;bottom:calc(10px + env(safe-area-inset-bottom));left:14px;right:14px;gap:9px;padding:7px;border-radius:14px;border:1px solid #cce6f2;background:#fffffff5;box-shadow:0 8px 32px #1e5c7d26}.mobile-bar a{flex:1;min-width:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
@@ -155,12 +156,20 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
 </main>
 <footer><span>© 2026 Majd Fatihy · Procurement Specialist</span><span class="links"><a href="../">العربية</a><a href="https://github.com/majdfatihy" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.youtube.com/@MajdFatihy" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/majdfatihy" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://dev.majdfatihy.com/privacy.html">Privacy</a><a href="https://dev.majdfatihy.com/terms.html">Terms</a></span></footer>
 </div>
-<div class="mobile-bar"><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=201066732514" target="_blank" rel="noopener noreferrer">WhatsApp</a><a class="btn" href="../majd-fatihy-cv-en.pdf" download="Majd-Fatihy-Procurement-CV-EN.pdf">Download PDF</a></div>
+<div class="mobile-bar" hidden><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=201066732514" target="_blank" rel="noopener noreferrer">WhatsApp</a><a class="btn" href="../majd-fatihy-cv-en.pdf" download="Majd-Fatihy-Procurement-CV-EN.pdf">Download PDF</a></div>
 <script>
 (function(){const a=document.getElementById('emailEn');if(!a)return;
 const source=location.protocol.startsWith('http')?location.origin+location.pathname:'https://dev.majdfatihy.com/procurement-specialist/en/';
 const subject='Procurement opportunity — Majd Fatihy';
 const body='Hello,\n\nI would like to discuss a possible professional opportunity.\n\nProfile source: '+source+'\n';
 a.href='mailto:info@majdfatihy.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);})();
+(function(){
+ const bar=document.querySelector('.mobile-bar'),buttons=document.querySelector('.intro .actions');
+ if(!bar||!buttons)return;
+ if('IntersectionObserver' in window){
+   const observer=new IntersectionObserver(entries=>{bar.hidden=entries[0].isIntersecting;},{threshold:0.05});
+   observer.observe(buttons);
+ }else{bar.hidden=false;}
+})();
 </script>
 </body></html>
