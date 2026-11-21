@@ -8,6 +8,8 @@ on:
       - "en/index.html"
       - "scripts/build-site.sh"
       - "scripts/audit-bilingual.py"
+      - "scripts/audit-language.py"
+      - "assets/js/cv-language.js"
       - ".github/workflows/pages.yml"
       - "scripts/check-cv.mjs"
       - "scripts/audit-layout.py"
@@ -53,6 +55,8 @@ jobs:
         run: python3 scripts/audit-layout.py
       - name: Check bilingual layout, English contacts and downloads
         run: python3 scripts/audit-bilingual.py
+      - name: Verify browser-language routing and persisted visitor choice
+        run: python3 scripts/audit-language.py
       - name: Attach QA screenshots and PDF samples
         if: always()
         uses: actions/upload-artifact@v4
