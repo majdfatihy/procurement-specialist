@@ -68,4 +68,29 @@ assert.ok(schemaEn['@graph']?.some(x=>x['@type']==='ProfilePage'),'English Profi
 assert.equal((site.match(/GTM-KTQKNNC8/g)||[]).length,1,'Do not duplicate GTM on Arabic');
 assert.equal((en.match(/GTM-KTQKNNC8/g)||[]).length,1,'Do not duplicate GTM on English');
 
-console.log('PASS: Arabic and English SEO, safe content, projects, downloads, mobile actions, ATS and page structure.');
+const routing=fs.readFileSync('assets/js/cv-language.js','utf8');
+const favicon='https://dev.majdfatihy.com/assets/img/procurement-specialist-majd-fatihy-favicon.jpg';
+has(site,'rel="icon" type="image/jpeg" href="'+favicon+'"','Arabic page-specific favicon');
+has(en,'rel="icon" type="image/jpeg" href="'+favicon+'"','English page-specific favicon');
+has(site,'src="./assets/js/cv-language.js"','Arabic language script');
+has(en,'src="../assets/js/cv-language.js"','English language script');
+has(site,'href="./en/?lang=en"','Manual English language preference');
+has(en,'href="../?lang=ar"','Manual Arabic language preference');
+assert.ok(!en.includes('<p class="title-ar"'), 'English page must not show Arabic duplicate name');
+has(routing,"localStorage.setItem(key, requested)",'Language choice saved');
+has(routing,"navigator.languages",'Browser-language detection');
+has(routing,"googlebot|bingbot",'Googlebot-safe access to both pages');
+for(const name of ['cv-i-target','cv-i-sparkles','cv-i-briefcase','cv-i-package','cv-i-clipboard','cv-i-tool','cv-i-book','cv-i-code','cv-i-help','cv-i-mail','cv-i-users']) {
+ has(site,'id="'+name+'"','Professional Arabic SVG icon '+name);
+ has(en,'id="'+name+'"','Professional English SVG icon '+name);
+}
+has(site,'id="roles"','Arabic SEO job title section');
+has(en,'id="roles"','English SEO job title section');
+for(const phrase of ['أخصائي مشتريات','مسؤول مشتريات','منسق مشتريات','مشتريات صناعية','مشتريات مستلزمات معامل']) {
+ has(site,phrase,'Arabic related purchasing specialization '+phrase);
+}
+for(const phrase of ['Procurement Specialist','Purchasing Specialist','Procurement Officer','Purchasing Officer','Technical Buyer','Packaging Procurement']) {
+ has(en,phrase,'English related purchasing specialization '+phrase);
+}
+
+console.log('PASS: bilingual SEO, browser language, page-only favicon, icons, privacy and PDF downloads.');
