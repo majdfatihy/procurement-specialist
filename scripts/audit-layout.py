@@ -83,6 +83,23 @@ async def audit():
             assert result["documentWidth"]<=width+2,(width,"Horizontal overflow",result)
             assert len(result["sections"])>=7,(width,"Missing sections",result["sections"])
             assert not errors,(width,"JavaScript errors",errors)
+            # Contact buttons must remain readable, aligned and at least two per row.
+            buttons=await page.locator('#contact .contact-actions .btn').evaluate_all("""nodes => {
+               return nodes.map(n => { const r=n.getBoundingClientRect();
+                 return {width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,
+                         text:n.textContent.trim(),font:getComputedStyle(n).fontSize};});
+             }""")
+            assert len(buttons)==4,(width,"Expected four contact actions",buttons)
+            assert all(b["height"]<=82 and b["width"]>=118 for b in buttons),(
+                width,"Contact button is too narrow or too tall",buttons)
+            assert abs(buttons[0]["top"]-buttons[1]["top"])<2,(
+                width,"First contact actions should share the same row",buttons)
+            assert abs(buttons[2]["top"]-buttons[3]["top"])<2,(
+                width,"Second contact actions should share the same row",buttons)
+            if width in (360,390,412,1440):
+                await page.locator('#contact .contact-actions').scroll_into_view_if_needed()
+                await page.screenshot(path=str(OUTPUT/f"contact-buttons-{width}.png"),
+                                      full_page=False,animations="disabled")
             menuData=None
             if width<=1100:
                 toggle=page.locator(".mobile-menu summary")
