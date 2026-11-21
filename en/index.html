@@ -118,7 +118,54 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
  .grid{gap:2.4mm}
  .tile h3{margin-bottom:1mm}
 }
-</style></head>
+</style><style id="cv-en-print-pages">
+#en-print-cv{display:none}
+@media print{
+ @page{size:A4;margin:0}
+ html,body{margin:0!important;padding:0!important;background:#fff!important;overflow:visible!important}
+ .page,.mobile-bar,.en-print-decor{display:none!important}
+ #en-print-cv{display:block!important;font-family:Inter,Arial,sans-serif;color:#172f41;line-height:1.5;font-size:9.3pt}
+ #en-print-cv *{box-sizing:border-box}
+ .en-print-page{display:block;position:relative;width:210mm;height:297mm;padding:23mm 16mm 22mm;background:#fff;overflow:hidden;break-after:page;page-break-after:always}
+ .en-print-page:last-child{break-after:auto;page-break-after:auto}
+ .en-print-page::before{content:"";position:absolute;inset:6mm;border:1px solid #8ebccf;border-radius:2.8mm;pointer-events:none}
+ .en-paper-top{position:absolute;top:8.5mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center;gap:5mm;padding-bottom:2mm;border-bottom:1px solid #c9e0e9;font:7.4pt Arial,sans-serif}
+ .en-paper-top a{color:#0b678a;text-decoration:none}
+ .en-paper-source{white-space:nowrap}
+ .en-paper-links{display:flex;gap:3mm}
+ .en-paper-links a{display:inline-flex;gap:1mm;align-items:center}
+ .en-paper-links svg{width:10px;height:10px;stroke:#0787ab;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+ .en-paper-namebox{display:block;border-bottom:2px solid #087eaa;padding:0 0 6mm;margin-bottom:5mm}
+ .en-paper-kicker{font-size:8pt;font-weight:800;letter-spacing:.6px;color:#0a759d}
+ .en-paper-name{font-size:29pt;font-weight:800;line-height:1.3;margin-top:2mm}
+ .en-paper-role{font-size:13pt;font-weight:800;color:#0878a3;margin-top:1mm}
+ .en-paper-contact-line{font-size:8pt;margin-top:2mm;color:#4a6675}
+ .en-print-page a{text-decoration:none;color:#096d93}
+ .en-paper-heading{font-size:12.2pt;font-weight:800;color:#086a91;border-left:3pt solid #09a0c7;padding-left:3mm;margin:5mm 0 2.5mm}
+ .en-print-page p{font-size:9pt;line-height:1.6;margin:0;color:#38596b}
+ .en-paper-job{display:flex;align-items:baseline;justify-content:space-between;gap:5mm;margin:2mm 0;font-size:10pt}
+ .en-paper-job span{white-space:nowrap;color:#0878a3;font-size:8pt}
+ .en-paper-bullets{columns:2;column-gap:9mm;padding-left:5mm;margin:2mm 0}
+ .en-paper-bullets li{font-size:8.5pt;line-height:1.55;margin-bottom:2mm;break-inside:avoid}
+ .en-paper-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3.6mm}
+ .en-paper-card{padding:3.5mm 4mm;border-radius:3mm;border:1px solid #cfe5ef;background:#fbfeff;break-inside:avoid}
+ .en-paper-card b{display:block;color:#086d94;font-size:9.2pt;margin-bottom:1mm}
+ .en-paper-card p,.en-paper-card li{font-size:8.25pt;line-height:1.55}
+ .en-paper-card ul{margin:0;padding-left:5mm}
+ .en-paper-flow{margin-top:6mm;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2mm}
+ .en-paper-flow span{font-size:8pt;text-align:center;padding:2mm;background:#ecf8fe;border:1px solid #d0e7f2;border-radius:2mm;color:#1a627e}
+ .en-paper-smallhead{display:flex;justify-content:space-between;align-items:center;gap:5mm;border-bottom:2px solid #0a82ac;padding-bottom:3mm}
+ .en-paper-smallhead strong{font-size:15pt}
+ .en-paper-smallhead span{font-size:8pt;color:#416979}
+ .en-paper-tags{display:flex;flex-wrap:wrap;gap:2mm}
+ .en-paper-tags span{font-size:8pt;padding:1.2mm 2.5mm;border:1px solid #d1e6ef;border-radius:2mm;color:#24566d}
+ .en-paper-education{margin-top:5mm}
+ .en-paper-bottom-contact{border-top:1px solid #c8e2eb;margin-top:5mm;padding-top:3mm}
+ .en-paper-bottom-contact b{color:#0a7198;font-size:9pt}
+ .en-paper-foot{position:absolute;bottom:9mm;left:16mm;right:16mm;border-top:1px solid #c9e0e9;padding-top:2mm;display:flex;align-items:center;justify-content:space-between;gap:3mm;color:#547386;font-size:7.5pt}
+}
+</style>
+</head>
 <body>
 <div class="en-print-decor">
 <div class="en-print-frame" aria-hidden="true"></div>
@@ -220,6 +267,70 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
 </main>
 <footer><span>© 2026 Majd Fatihy · Procurement Specialist</span><span class="links"><a href="../?lang=ar" lang="ar" hreflang="ar-EG">العربية</a><a href="https://github.com/majdfatihy" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.youtube.com/@MajdFatihy" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/majdfatihy" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://dev.majdfatihy.com/privacy.html">Privacy</a><a href="https://dev.majdfatihy.com/terms.html">Terms</a></span></footer>
 </div>
+<article id="en-print-cv" lang="en" aria-label="Professional resume for printing">
+<section class="en-print-page">
+<div class="en-paper-top">
+<a class="en-paper-source" href="https://dev.majdfatihy.com/procurement-specialist/en/">dev.majdfatihy.com/procurement-specialist/en/</a>
+<div class="en-paper-links" aria-label="Professional contact links">
+<a href="mailto:info@majdfatihy.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>Email</a>
+<a href="https://api.whatsapp.com/send?phone=201066732514" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-13 8l-5 2 2-5A9 9 0 1 1 21 11Z"/><path d="M9 9a7 7 0 0 0 6 6"/></svg>WhatsApp</a>
+<a href="https://t.me/majdfatihy" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-8-9-4 20-8Z"/><path d="M11 14 22 2"/></svg>Telegram</a>
+</div></div>
+<header class="en-paper-namebox"><div class="en-paper-kicker">PROFESSIONAL RESUME · MINYA, EGYPT</div>
+<div class="en-paper-name">Majd Fatihy</div>
+<div class="en-paper-role">Medical &amp; Industrial Procurement Specialist</div>
+<div class="en-paper-contact-line"><a href="mailto:info@majdfatihy.com">info@majdfatihy.com</a> · <a href="https://api.whatsapp.com/send?phone=201066732514">WhatsApp: +20 106 673 2514</a> · May 2024 — Present</div></header>
+<div class="en-paper-heading">Professional summary</div>
+<p>Procurement professional working in diagnostic-reagents manufacturing since May 2024. Experience across purchase requests, technical specifications, supplier sourcing, quotation comparison, negotiations, purchase orders, delivery follow-up, inventory coordination, returns and reporting. I coordinate with production, quality, maintenance, warehousing and finance teams.</p>
+<div class="en-paper-heading">Professional experience</div>
+<div class="en-paper-job"><b>Procurement Specialist — Sern Diagnostic Reagents Factory</b><span>May 2024 – Present</span></div>
+<ul class="en-paper-bullets">
+<li>Review requisitions and clarify technical specifications with requesting and technical departments.</li>
+<li>Identify suppliers, request and evaluate RFQs, and negotiate terms within delegated authority.</li>
+<li>Issue and track purchase orders, delivery schedules, pending items and closure status.</li>
+<li>Coordinate samples and packaging print proofs for approval before full-scale production.</li>
+<li>Monitor receipts, critical materials, batch and expiry information and supplier returns.</li>
+<li>Coordinate logistics, shipping, maintenance requirements and locally available alternatives.</li>
+<li>Prepare procurement and supplier performance reports for relevant stakeholders.</li>
+</ul>
+<div class="en-paper-heading">Purchasing categories</div>
+<div class="en-paper-grid">
+<div class="en-paper-card"><b>Packaging and printed materials</b><p>Printed cartons, corrugated boxes, foil, metallized pouches, artwork proofs and pre-production samples.</p></div>
+<div class="en-paper-card"><b>Raw materials and chemicals</b><p>Plastic raw materials, custom plastic components, laboratory chemicals and production supplies.</p></div>
+<div class="en-paper-card"><b>Medical and laboratory supplies</b><p>Laboratory consumables, diagnostic manufacturing requirements and specified electrical devices.</p></div>
+<div class="en-paper-card"><b>Machinery and maintenance</b><p>Production equipment, machinery spare parts, maintenance items and alternative sourcing.</p></div>
+</div>
+<div class="en-paper-flow"><span>Requirement</span><span>RFQs &amp; Suppliers</span><span>Negotiation &amp; PO</span><span>Receipt &amp; Closure</span></div>
+<div class="en-paper-foot"><span>Majd Fatihy · Procurement Specialist</span><span>Printed: <time class="en-printed-at"></time></span><span>1 / 2</span></div>
+</section>
+<section class="en-print-page">
+<div class="en-paper-top">
+<a class="en-paper-source" href="https://dev.majdfatihy.com/procurement-specialist/en/">dev.majdfatihy.com/procurement-specialist/en/</a>
+<div class="en-paper-links" aria-label="Professional contact links">
+<a href="mailto:info@majdfatihy.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="m3 7 9 7 9-7"/></svg>Email</a>
+<a href="https://api.whatsapp.com/send?phone=201066732514" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-13 8l-5 2 2-5A9 9 0 1 1 21 11Z"/><path d="M9 9a7 7 0 0 0 6 6"/></svg>WhatsApp</a>
+<a href="https://t.me/majdfatihy" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-8-9-4 20-8Z"/><path d="M11 14 22 2"/></svg>Telegram</a>
+</div></div>
+<header class="en-paper-smallhead"><strong>Majd Fatihy</strong><span>PROCUREMENT &amp; PURCHASING SPECIALIST</span></header>
+<div class="en-paper-heading">Procurement, analysis and coordination</div>
+<div class="en-paper-grid">
+<div class="en-paper-card"><b>Supplier and cost management</b><ul><li>Procurement analysis by period and supplier</li><li>Quotation, price and delivery comparisons</li><li>Supplier assessment and alternative sourcing</li></ul></div>
+<div class="en-paper-card"><b>Inventory and continuity</b><ul><li>Critical and slow-moving stock monitoring</li><li>Batch, expiry and consumption reviews</li><li>Warehouse and production coordination</li></ul></div>
+<div class="en-paper-card"><b>Purchase order control</b><ul><li>Documenting procurement activities</li><li>Tracking completion and delivery updates</li><li>Collaborating with finance and operations</li></ul></div>
+<div class="en-paper-card"><b>Procurement problem solving</b><ul><li>Managing delayed deliveries and returns</li><li>Evaluating approved technical alternatives</li><li>Supporting shipping and contract review</li></ul></div>
+</div>
+<div class="en-paper-heading">Tools and professional skills</div>
+<div class="en-paper-tags"><span>ERP BAR (since 2024)</span><span>Microsoft Excel</span><span>Microsoft Word</span><span>Supplier Sourcing</span><span>RFQ / PO</span><span>Negotiation</span><span>Inventory Analysis</span><span>Supplier Evaluation</span><span>Cost Analysis</span><span>Technical Specifications</span><span>Reporting</span></div>
+<div class="en-paper-grid en-paper-education">
+<div class="en-paper-card"><b>Education</b><p>Bachelor of Arts, Minya University — Library and Information Science. Academic foundation in research, organizing information, documentation and information retrieval.</p></div>
+<div class="en-paper-card"><b>Systems and languages</b><p>Working with ERP BAR, Excel and Word; adaptable to new workflows. Arabic: native. English: actively improving professional communication.</p></div>
+</div>
+<div class="en-paper-heading">Digital work and communication</div>
+<p>Technical content creator on YouTube since 2016, creating practical tutorials based on research, technology and clear explanations. Public independent projects are available on <a href="https://github.com/majdfatihy">GitHub</a> and on my <a href="https://www.youtube.com/@MajdFatihy">YouTube channel</a>.</p>
+<div class="en-paper-bottom-contact"><b>Professional contact</b><p><a href="mailto:info@majdfatihy.com">info@majdfatihy.com</a> · <a href="https://api.whatsapp.com/send?phone=201066732514">WhatsApp: +20 106 673 2514</a> · <a href="https://t.me/majdfatihy">Telegram: @majdfatihy</a></p></div>
+<div class="en-paper-foot"><span>Majd Fatihy · Procurement Specialist</span><span>Printed: <time class="en-printed-at"></time></span><span>2 / 2</span></div>
+</section>
+</article>
 <div class="mobile-bar" hidden><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=201066732514" target="_blank" rel="noopener noreferrer">WhatsApp</a><a class="btn" href="../majd-fatihy-cv-en.pdf" download="Majd-Fatihy-Procurement-CV-EN.pdf">Download PDF</a></div>
 <script>
 (function(){
