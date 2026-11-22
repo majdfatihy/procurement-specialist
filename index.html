@@ -305,6 +305,15 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 }
 @media print{#contact .contact-actions{display:none!important}}
 </style>
+<style id="cv-language-notice-style">
+.cv-language-notice{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin:15px 0 0;background:#f5fcff;border:1px solid #b5e2f2;border-radius:13px;padding:11px 14px;color:#1e536d;font-size:13px;line-height:1.7}
+.cv-language-notice[hidden]{display:none!important}
+.cv-language-notice span{flex:1;min-width:180px}
+.cv-language-notice a{display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;border-radius:9px;background:#0b799f;color:#fff;font:700 12px Arial,sans-serif;white-space:nowrap}
+.cv-language-notice button{background:none;border:0;color:#37667d;font-size:21px;cursor:pointer;padding:0 6px}
+@media(max-width:600px){.cv-language-notice{margin:12px 0 0;padding:9px 11px;font-size:12px}.cv-language-notice span{min-width:0;flex-basis:100%}}
+@media print{.cv-language-notice{display:none!important}}
+</style>
 </head>
 <body>
 <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
@@ -336,6 +345,11 @@ h1{margin:15px 0 3px;font-size:clamp(36px,5vw,61px);line-height:1.3;letter-spaci
 </div>
 </header>
 <main id="top">
+<div id="cv-language-notice" class="cv-language-notice" hidden role="status">
+<span>لغة متصفحك أو اختيارك المحفوظ هي الإنجليزية. يمكنك استعراض السيرة بالإنجليزية.</span>
+<a data-cv-language-link href="./en/?lang=en" lang="en" hreflang="en">English CV</a>
+<button type="button" data-cv-language-dismiss aria-label="إغلاق اقتراح اللغة">×</button>
+</div>
 <div class="hero">
 <section class="hero-main" aria-labelledby="main-title">
 <span class="eyebrow">ملف مهني · المنيا، مصر</span>
