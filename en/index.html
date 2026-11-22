@@ -165,6 +165,15 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
  .en-paper-foot{position:absolute;bottom:9mm;left:16mm;right:16mm;border-top:1px solid #c9e0e9;padding-top:2mm;display:flex;align-items:center;justify-content:space-between;gap:3mm;color:#547386;font-size:7.5pt}
 }
 </style>
+<style id="cv-language-notice-style">
+.cv-language-notice{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;margin:14px 0 0;background:#f5fcff;border:1px solid #b5e2f2;border-radius:13px;padding:11px 14px;color:#24536c;font-size:13px;line-height:1.7}
+.cv-language-notice[hidden]{display:none!important}
+.cv-language-notice span{flex:1;min-width:180px}
+.cv-language-notice a{display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;border-radius:9px;background:#0b799f;color:#fff;font:700 12px Arial,sans-serif;white-space:nowrap}
+.cv-language-notice button{background:none;border:0;color:#37667d;font-size:21px;cursor:pointer;padding:0 6px}
+@media(max-width:650px){.cv-language-notice{margin:12px 0 0;padding:9px 11px;font-size:12px}.cv-language-notice span{min-width:0;flex-basis:100%}}
+@media print{.cv-language-notice{display:none!important}}
+</style>
 </head>
 <body>
 <div class="en-print-decor">
@@ -194,6 +203,11 @@ footer .links{display:flex;gap:13px;flex-wrap:wrap}
 <div class="page">
 <header class="top"><a class="brand" href="#top">Majd Fatihy<small>PROFESSIONAL CV</small></a><nav class="nav" aria-label="Resume sections"><a href="#roles">Job titles</a><a href="#strengths">Strengths</a><a href="#experience">Experience</a><a href="#sourcing">Sourcing</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav><a class="lang" href="../?lang=ar" lang="ar" hreflang="ar-EG" dir="rtl">العربية</a></header>
 <main id="top">
+<div id="cv-language-notice" class="cv-language-notice" hidden role="status">
+<span>Your browser language or saved preference is Arabic. You can view this CV in Arabic.</span>
+<a data-cv-language-link href="../?lang=ar" lang="ar" hreflang="ar-EG">العربية</a>
+<button type="button" data-cv-language-dismiss aria-label="Dismiss language suggestion">×</button>
+</div>
 <div class="hero">
 <section class="intro panel" aria-labelledby="name">
 <span class="kicker">Professional profile · Minya, Egypt</span>
