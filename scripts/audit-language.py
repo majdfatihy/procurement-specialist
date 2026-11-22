@@ -63,7 +63,7 @@ async def main():
                 await page.goto(url, wait_until="domcontentloaded")
                 assert page.url == url
                 assert await page.locator("#cv-language-notice").is_visible()
-                assert await page.locator("[data-cv-language-link]").get_attribute("href") == (
+                assert await page.locator("[data-cv-language-link]").evaluate("(el) => el.href") == (
                     url + "en/?lang=en")
                 await page.locator("[data-cv-language-dismiss]").click()
                 assert not await page.locator("#cv-language-notice").is_visible()
