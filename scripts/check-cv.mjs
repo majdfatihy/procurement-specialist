@@ -77,9 +77,14 @@ has(en,'src="../assets/js/cv-language.js"','English language script');
 has(site,'href="./en/?lang=en"','Manual English language preference');
 has(en,'href="../?lang=ar"','Manual Arabic language preference');
 assert.ok(!en.includes('<p class="title-ar"'), 'English page must not show Arabic duplicate name');
-has(routing,"localStorage.setItem(key, requested)",'Language choice saved');
-has(routing,"navigator.languages",'Browser-language detection');
-has(routing,"googlebot|bingbot",'Googlebot-safe access to both pages');
+has(routing,"localStorage.setItem(key, manual)",'Explicit language choice saved');
+has(routing,"navigator.languages",'Browser-language detected for optional suggestion');
+has(routing,"document.getElementById('cv-language-notice')",'Optional locale notice');
+assert.ok(!routing.includes('location.replace(') && !routing.includes('location.assign('),'No forced language redirects');
+has(site,'id="cv-language-notice"','Arabic page offers optional English language');
+has(en,'id="cv-language-notice"','English page offers optional Arabic language');
+has(site,'.cv-language-notice[hidden]{display:none!important}','Hidden notice remains hidden on Arabic CV');
+has(en,'.cv-language-notice[hidden]{display:none!important}','Hidden notice remains hidden on English CV');
 for(const name of ['cv-i-target','cv-i-sparkles','cv-i-briefcase','cv-i-package','cv-i-clipboard','cv-i-tool','cv-i-book','cv-i-code','cv-i-help','cv-i-mail','cv-i-users']) {
  has(site,'id="'+name+'"','Professional Arabic SVG icon '+name);
  has(en,'id="'+name+'"','Professional English SVG icon '+name);
